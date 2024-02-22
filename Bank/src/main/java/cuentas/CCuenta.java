@@ -1,5 +1,8 @@
+package cuentas;
+
 /**
- * La clase CCuenta representa una cuenta bancaria y proporciona métodos para manipularla.
+ * La clase CCuenta representa una cuenta bancaria y proporciona métodos para
+ * manipularla.
  */
 public class CCuenta {
 
@@ -17,6 +20,7 @@ public class CCuenta {
 
     /**
      * Constructor con parámetros de la clase CCuenta.
+     *
      * @param nom El nombre del titular de la cuenta.
      * @param cue El número de cuenta.
      * @param sal El saldo inicial de la cuenta.
@@ -31,6 +35,7 @@ public class CCuenta {
 
     /**
      * Obtiene el estado actual del saldo de la cuenta.
+     *
      * @return El saldo actual de la cuenta.
      */
     public double estado() {
@@ -39,32 +44,38 @@ public class CCuenta {
 
     /**
      * Ingresa una cantidad en la cuenta.
+     *
      * @param cantidad La cantidad a ingresar en la cuenta.
      * @throws Exception Si la cantidad es negativa.
      */
     public void ingresar(double cantidad) throws Exception {
-        if (cantidad < 0)
+        if (cantidad < 0) {
             throw new Exception("No se puede ingresar una cantidad negativa");
+        }
         saldo = saldo + cantidad;
     }
 
     /**
      * Retira una cantidad de la cuenta.
+     *
      * @param cantidad La cantidad a retirar de la cuenta.
-     * @throws Exception Si la cantidad es negativa o si no hay suficiente saldo.
+     * @throws Exception Si la cantidad es negativa o si no hay suficiente
+     * saldo.
      */
     public void retirar(double cantidad) throws Exception {
-        if (cantidad <= 0)
-            throw new Exception ("No se puede retirar una cantidad negativa");
-        if (estado() < cantidad)
-            throw new Exception ("No se hay suficiente saldo");
+        if (cantidad <= 0) {
+            throw new Exception("No se puede retirar una cantidad negativa");
+        }
+        if (estado() < cantidad) {
+            throw new Exception("No se hay suficiente saldo");
+        }
         saldo = saldo - cantidad;
     }
 
     // Métodos getters y setters para acceder y modificar los atributos de la cuenta
-
     /**
      * Obtiene el nombre del titular de la cuenta.
+     *
      * @return El nombre del titular de la cuenta.
      */
     public String getNombre() {
@@ -73,6 +84,7 @@ public class CCuenta {
 
     /**
      * Establece el nombre del titular de la cuenta.
+     *
      * @param nombre El nuevo nombre del titular de la cuenta.
      */
     public void setNombre(String nombre) {
@@ -81,6 +93,7 @@ public class CCuenta {
 
     /**
      * Obtiene el número de cuenta.
+     *
      * @return El número de cuenta.
      */
     public String getCuenta() {
@@ -89,6 +102,7 @@ public class CCuenta {
 
     /**
      * Establece el número de cuenta.
+     *
      * @param cuenta El nuevo número de cuenta.
      */
     public void setCuenta(String cuenta) {
@@ -97,6 +111,7 @@ public class CCuenta {
 
     /**
      * Obtiene el saldo de la cuenta.
+     *
      * @return El saldo de la cuenta.
      */
     public double getSaldo() {
@@ -105,6 +120,7 @@ public class CCuenta {
 
     /**
      * Establece el saldo de la cuenta.
+     *
      * @param saldo El nuevo saldo de la cuenta.
      */
     public void setSaldo(double saldo) {
@@ -113,6 +129,7 @@ public class CCuenta {
 
     /**
      * Obtiene el tipo de interés de la cuenta.
+     *
      * @return El tipo de interés de la cuenta.
      */
     public double getTipoInterés() {
@@ -121,6 +138,7 @@ public class CCuenta {
 
     /**
      * Establece el tipo de interés de la cuenta.
+     *
      * @param tipoInterés El nuevo tipo de interés de la cuenta.
      */
     public void setTipoInterés(double tipoInterés) {
